@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.cabecero {
+    background-color: #c9302c;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.presupuesto {
+    text-align: center;
+}
+
+.presupuesto_titulo {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.presupuesto_valor {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.presupuesto_ingreso,
+.presupuesto_egreso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.limpiarEstilos {
+    margin: 0;
+    padding: 0;
+}
+
+.derecha {
+    display: flex;
+    align-items: center;
+}
+
+.presupuesto_ingreso--texto,
+.presupuesto_egreso--texto {
+    font-weight: bold;
+}
+
+.agregar {
+    margin-bottom: 20px;
+}
+
+.agregar_contenedor {
+    display: flex;
+    align-items: center;
+}
+
+.agregar_tipo {
+    margin-right: 10px;
+}
+
+.agregar_descripcion,
+.agregar_valor {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.agregar_btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.agregar_btn:hover {
+    background-color: #218838;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ingreso,
+.egreso {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    margin: 0 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ingreso_titulo,
+.egreso_titulo {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.elemento {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.elemento_descripcion {
+    flex: 2;
+}
+
+.elemento_valor,
+.elemento_porcentaje {
+    margin-left: 10px;
+}
+
+.elemento_eliminar_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.elemento_eliminar_btn:hover {
+    color: red;
+}
