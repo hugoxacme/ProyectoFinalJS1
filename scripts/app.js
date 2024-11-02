@@ -1,5 +1,5 @@
-import Ingreso from './ingreso.js'; // Asegúrate de que la ruta es correcta
-import Egreso from './egreso.js'; // Asegúrate de que la ruta es correcta
+import Ingreso from './ingreso.js';
+import Egreso from './egreso.js';
 
 // Arreglos para manejar los ingresos y egresos
 let ingresos = [
@@ -39,7 +39,6 @@ const formatoPorcentaje = (valor) => {
     });
 };
 
-// Función para cargar el cabecero
 const cargarCabecero = () => {
     const presupuesto = totalIngresos() - totalEgresos();
     const porcentajeEgreso = (totalEgresos() / totalIngresos()) * 100 || 0;
@@ -51,7 +50,6 @@ const cargarCabecero = () => {
     document.getElementById('egresos').innerHTML = formatoMoneda(totalEgresos());
 };
 
-// Función para cargar los ingresos dinámicamente
 const cargarIngresos = () => {
     let ingresosHTML = '';
     for (const ingreso of ingresos) {
@@ -77,7 +75,6 @@ const crearIngresoHTML = (ingreso) => {
     `;
 };
 
-// Función para cargar los egresos dinámicamente
 const cargarEgresos = () => {
     let egresosHTML = '';
     for (const egreso of egresos) {
@@ -130,40 +127,40 @@ const agregarDato = () => {
     const descripcion = forma.querySelector('#descripcion').value;
     const valor = parseFloat(forma.querySelector('#valor').value);
 
-    // Validar que la descripción y el valor no estén vacíos
+    
     if (descripcion === '' || isNaN(valor) || valor <= 0) {
         alert('Por favor, completa todos los campos correctamente.');
         return;
     }
 
-    // Agrega el dato al arreglo correspondiente
+
     if (tipo === 'ingreso') {
         ingresos.push(new Ingreso(descripcion, valor));
     } else {
         egresos.push(new Egreso(descripcion, valor));
     }
 
-    // Limpia los campos del formulario
+    
     forma.querySelector('#descripcion').value = '';
     forma.querySelector('#valor').value = '';
 
-    // Actualiza la interfaz
+    
     cargarCabecero();
     cargarIngresos();
     cargarEgresos();
 };
 
-// Función para cargar la aplicación
+
 const cargarApp = () => {
     cargarCabecero();
     cargarIngresos();
     cargarEgresos();
 };
 
-// Llama a la función cargarApp cuando se cargue el documento
+
 window.onload = cargarApp;
 
-// Expone las funciones al contexto global
+
 window.eliminarIngreso = eliminarIngreso;
 window.eliminarEgreso = eliminarEgreso;
 window.agregarDato = agregarDato;

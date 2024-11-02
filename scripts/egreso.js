@@ -1,17 +1,16 @@
-import Dato from './dato.js'; // Asegúrate de que la ruta es correcta
+import Dato from './dato.js';
 
 class Egreso extends Dato {
-    static contadorEgresos = 0; // Variable estática para contar egresos
+    static contadorEgresos = 0;
 
     constructor(descripcion, valor) {
-        super(descripcion, valor); // Inicializa el objeto de la clase padre
-        this._id = ++Egreso.contadorEgresos; // Asigna el ID usando preincremento
+        super(descripcion, valor); 
+        this._id = ++Egreso.contadorEgresos; 
     }
 
-    // Getter para el atributo id
     get id() {
         return this._id;
     }
 }
 
-export default Egreso; // Exporta la clase para que pueda ser utilizada en otros módulos
+export default Egreso; 
